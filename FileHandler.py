@@ -20,7 +20,7 @@ class FileHandler:
         return result
 
     @classmethod
-    def write_json_to_file(cls, file_name: str, data: list[dict]) -> Union[list[str], None]:
+    def write_json_to_file(cls, file_name: str, data: list[str]) -> Union[list[str], None]:
         if not cls.check_file_name_ok(file_name):
             return None
         for json in data:
