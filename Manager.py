@@ -1,6 +1,6 @@
-from Menu import Menu
-from CipherHandler import Cipher, Buffer, Text
-from FileHandler import FileHandler
+from menu import Menu
+from cipher_handler import Cipher, Buffer, Text
+from file_handler import FileHandler
 import sys
 
 
