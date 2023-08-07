@@ -88,7 +88,7 @@ class Text:
 
 class Cipher:
     @staticmethod
-    def encrypt(data_object, shift: str):
+    def encrypt(data_object: Text, shift: str) -> None:
         result = ""
         shift = int(shift)
         for i in range(len(data_object.text)):
@@ -104,7 +104,7 @@ class Cipher:
         data_object.encrypted = True
 
     @staticmethod
-    def decrypt(data_object):
+    def decrypt(data_object: Text) -> None:
         result = ""
         shift = int(data_object.encryption_type[3:])
         for i in range(len(data_object.text)):
@@ -131,7 +131,6 @@ class Cipher:
 
     @staticmethod
     def decrypt_from_rot_shift(id_nr: str) -> None:
-        result = ""
         if not Buffer.check_id_ok(id_nr):
             return
         data_object = Buffer.buffer[int(id_nr)-1]

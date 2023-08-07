@@ -30,7 +30,7 @@ class FileHandler:
                 file.write(f"{json}\n")
 
     @staticmethod
-    def has_forbidden_chars(file_name):
+    def has_forbidden_chars(file_name: str) -> bool:
         return any([sign for sign in file_name if sign in FileHandler.NOT_PERMITTED])
 
     @classmethod
@@ -50,9 +50,3 @@ class FileHandler:
         return False
 
 
-class FileNameTooLongError(ValueError):
-    pass
-
-
-class NotPermittedCharsError(TypeError):
-    pass

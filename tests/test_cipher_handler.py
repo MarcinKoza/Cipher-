@@ -1,6 +1,5 @@
-import pytest
 import json
-from cipher_handler import Cipher, Buffer, Text
+from application.cipher_handler import Cipher, Buffer, Text
 from unittest.mock import Mock, patch
 
 
@@ -81,11 +80,10 @@ class TestBufferBufferFromJson:
         assert len(Buffer.buffer) == 0
 
 
-class TestCipherEncryptToRotShift:
-    @staticmethod
+class TestCipherEncryptToRotShift(TestWithBuffer):
     def setup_method(self):
-        Buffer.clear_buffer()
-        exec(create_temp_buffer_cmd)
+        super().setup_method()
+        # exec(create_temp_buffer_cmd)
 
     @pytest.mark.parametrize('shift, id_nr, result', [('13', '1', "uryyb zbgbe ovxre"),
                                                       ('47', "2", "bjjy yvt oj vgg kzjkgz")])
@@ -105,7 +103,7 @@ class TestCipherEncryptToRotShift:
         assert Buffer.buffer == result
 
 
-class TestCipherDecryptFromRotShift:
+class TestCipherDecryptFromRotShift(TestWithBuffer):
 
     @staticmethod
     def setup_method(self):
