@@ -50,3 +50,9 @@ class FileHandler:
         return False
 
 
+class FileNameTooLongError(ValueError):
+    pass
+
+
+class NotPermittedCharsError(TypeError):
+    pass

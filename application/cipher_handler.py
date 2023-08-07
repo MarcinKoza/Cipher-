@@ -158,12 +158,4 @@ class InvalidIdNumber(Exception):
 
 
 
-"""
-Cipher("hello moto")
-Cipher("good day")
-Cipher("my mutter is computer")
-
-print(buffer)
-"""
-
 
